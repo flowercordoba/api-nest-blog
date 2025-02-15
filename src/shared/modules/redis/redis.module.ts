@@ -4,6 +4,7 @@ import { envs } from '../../../envs';
 import { RedisService } from 'src/shared/modules/redis/redis.service';
 import { RedisSubscriberService } from './redis-subscriber.service';
 import { RedisPublisherService } from './redis-publisher.service';
+import { CacheService } from './cache.service';
 
 const logger: Logger = new Logger('RedisModule');
 
@@ -38,12 +39,14 @@ const logger: Logger = new Logger('RedisModule');
     RedisService,
     RedisSubscriberService,
     RedisPublisherService,
+    CacheService,
   ],
   exports: [
     'REDIS_CLIENT',
     RedisService,
     RedisSubscriberService,
     RedisPublisherService,
+    CacheService,
   ],
 })
 export class RedisModule {}
