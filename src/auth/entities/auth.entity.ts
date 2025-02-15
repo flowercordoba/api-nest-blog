@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Blog } from "src/blog/entities/blog.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity() 
@@ -21,6 +22,9 @@ export class Auth {
     
     @Column({ type: 'varchar', length: 255, nullable: true })
     photo?: string;
+
+    @OneToMany(() => Blog, (blog) => blog.creator) // 🔹 Relación con blogs creados
+    blogs: Blog[];
 
 
 }

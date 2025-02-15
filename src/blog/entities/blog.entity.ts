@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Auth } from 'src/auth/entities/auth.entity';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm';
 
 @Entity()
 export class Blog {
@@ -12,9 +13,9 @@ export class Blog {
   @Column({ type: 'text' })
   content: string;
 
-  @Column({ type: 'varchar', length: 150 })
-  author: string;
-  
+  @ManyToOne(() => Auth, (user) => user.blogs, { eager: true }) // 🔹 Relación con el usuario creador
+  creator: Auth;
+
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;
 
