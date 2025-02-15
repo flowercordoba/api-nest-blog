@@ -5,12 +5,13 @@ import { AuthService } from './auth.service';
 import { envs } from 'src/envs';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Auth } from './entities/auth.entity';
+import { JwtStrategy } from 'src/guard/jwt.strategy';
 
 
 @Module({
 
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService,JwtStrategy],
   imports:[
     TypeOrmModule.forFeature([Auth]),
     JwtModule.register({
