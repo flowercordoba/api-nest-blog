@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CryptoPrice } from './entity/price.entity';
-import { RedisService } from 'src/database/redis.service';
+import { RedisService } from 'src/shared/modules/redis/redis.service';
 
 @Injectable()
 export class RealtimeService {

@@ -1,9 +1,11 @@
 import { Module, Global, Logger } from '@nestjs/common';
 import Redis from 'ioredis';
-import { envs } from '../envs'; 
-import { RedisService } from 'src/database/redis.service';
+import { envs } from '../../../envs';
+import { RedisService } from 'src/shared/modules/redis/redis.service';
+import { RedisSubscriberService } from './redis-subscriber.service';
+import { RedisPublisherService } from './redis-publisher.service';
 
-const logger: Logger = new Logger('RedisModule'); 
+const logger: Logger = new Logger('RedisModule');
 
 @Global()
 @Module({
@@ -14,7 +16,9 @@ const logger: Logger = new Logger('RedisModule');
         const client = new Redis({
           host: envs.REDIS_HOST,
           port: envs.REDIS_PORT,
-          password: envs.REDIS_PASSWORD?.trim() ? envs.REDIS_PASSWORD : undefined,
+          password: envs.REDIS_PASSWORD?.trim()
+            ? envs.REDIS_PASSWORD
+            : undefined,
           db: Number(envs.REDIS_DB) || 0,
         });
 
@@ -32,7 +36,14 @@ const logger: Logger = new Logger('RedisModule');
       },
     },
     RedisService,
+    RedisSubscriberService,
+    RedisPublisherService,
   ],
-  exports: ['REDIS_CLIENT', RedisService],
+  exports: [
+    'REDIS_CLIENT',
+    RedisService,
+    RedisSubscriberService,
+    RedisPublisherService,
+  ],
 })
 export class RedisModule {}

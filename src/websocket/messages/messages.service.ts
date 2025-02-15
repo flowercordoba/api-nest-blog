@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Socket } from 'socket.io';
-import { IclientsConectados } from 'src/interfaces/socket.interfaces';
+import { IclientsConectados } from 'src/shared/interfaces/socket.interfaces';
 
 @Injectable()
 export class MessagesService {
