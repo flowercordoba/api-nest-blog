@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Auth } from 'src/auth/entities/auth.entity';
 import { Blog } from 'src/blog/entities/blog.entity';
 import { envs } from 'src/envs';
+import { CryptoPrice } from 'src/websocket/realtime/entity/price.entity';
 
 
 @Global()
@@ -15,7 +16,7 @@ import { envs } from 'src/envs';
       username: envs.DATABASE_USERNAME,
       password: envs.DATABASE_PASSWORD,
       database: envs.DATABASE_NAME,
-      entities: [Auth,Blog],
+      entities: [Auth,Blog,CryptoPrice],
       synchronize: true,
       ssl:true
     }),
