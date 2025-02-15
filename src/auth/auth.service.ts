@@ -5,7 +5,7 @@ import * as bcrypt from 'bcrypt';
 import { Auth } from './entities/auth.entity';
 import { JwtService } from '@nestjs/jwt';
 import { CreateAuthDto } from './dto/create-auth.dto';
-import { envs } from 'src/envs';
+import { envs } from 'src/shared/envs';
 
 @Injectable()
 export class AuthService {

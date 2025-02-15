@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
-import { MessagesModule } from './messages/messages.module';
-import { RealtimeModule } from './realtime/realtime.module';
+import { ChartModule } from './chart/chart.module';
 
 @Module({
-  imports: [RealtimeModule],
-  exports: [MessagesModule],
+  imports: [ChartModule],
+  exports: [ChartModule],
 })
 export class WebsocketModule {}

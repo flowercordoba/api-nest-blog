@@ -10,7 +10,7 @@ import {
 import { MessagesService } from './messages.service';
 import { Socket, Server } from 'socket.io';
 import { JwtService } from '@nestjs/jwt';
-import { NewMessageDto } from 'src/dtos/new-message.dto';
+import { NewMessageDto } from 'src/websocket/messages/dtos/new-message.dto';
 
 @WebSocketGateway({ cors: true })
 export class MessagesGateway implements OnGatewayConnection, OnGatewayDisconnect {

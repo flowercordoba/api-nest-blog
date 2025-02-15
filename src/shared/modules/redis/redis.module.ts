@@ -1,6 +1,6 @@
 import { Module, Global, Logger } from '@nestjs/common';
 import Redis from 'ioredis';
-import { envs } from '../../../envs';
+import { envs } from '../../envs';
 import { RedisService } from 'src/shared/modules/redis/redis.service';
 import { RedisSubscriberService } from './redis-subscriber.service';
 import { RedisPublisherService } from './redis-publisher.service';

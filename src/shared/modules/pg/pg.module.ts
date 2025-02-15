@@ -2,7 +2,7 @@ import { Module, Global } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Auth } from 'src/auth/entities/auth.entity';
 import { Blog } from 'src/blog/entities/blog.entity';
-import { envs } from 'src/envs';
+import { envs } from 'src/shared/envs';
 import { CryptoPrice } from 'src/websocket/realtime/entity/price.entity';
 
 

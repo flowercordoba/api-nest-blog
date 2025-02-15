@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
-import { envs } from 'src/envs';
+import { envs } from 'src/shared/envs';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Auth } from './entities/auth.entity';
 import { JwtStrategy } from 'src/guard/jwt.strategy';

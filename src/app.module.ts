@@ -3,7 +3,6 @@ import { AuthModule } from './auth/auth.module';
 import { BlogModule } from './blog/blog.module';
 import { PgModule } from './shared/modules/pg/pg.module';
 import { RedisModule } from './shared/modules/redis/redis.module';
-import { RealtimeModule } from './websocket/realtime/realtime.module';
 import { WebsocketModule } from './websocket/websocket.module';
 
 @Module({
@@ -12,7 +11,8 @@ import { WebsocketModule } from './websocket/websocket.module';
     BlogModule,
     PgModule,
     RedisModule,
-    WebsocketModule
+    WebsocketModule,
+    
   ],
   controllers: [],
   providers: [],
