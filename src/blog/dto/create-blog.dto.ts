@@ -8,7 +8,5 @@ export class CreateBlogDto {
   @IsString()
   content: string;
 
-  @IsString()
-  @Length(3, 150)
-  author: string;
+  
 }
