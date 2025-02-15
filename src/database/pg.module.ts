@@ -1,5 +1,6 @@
 import { Module, Global } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Auth } from 'src/auth/entities/auth.entity';
 import { envs } from 'src/envs';
 
 
@@ -13,7 +14,7 @@ import { envs } from 'src/envs';
       username: envs.DATABASE_USERNAME,
       password: envs.DATABASE_PASSWORD,
       database: envs.DATABASE_NAME,
-      entities: [],
+      entities: [Auth],
       synchronize: true,
       ssl:true
     }),

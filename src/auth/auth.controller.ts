@@ -15,10 +15,10 @@ export class AuthController {
   login(@Body() createAuthDto: CreateAuthDto) {
     return this.authService.login(createAuthDto);
   }
-  @Get('current-user')
-  currentUser(@Body() createAuthDto) {
-    return this.authService.currentUser();
-  }
+  // @Get('current-user')
+  // currentUser(@Body() createAuthDto) {
+  //   return this.authService.currentUser();
+  // }
 
   
 }
