@@ -5,7 +5,7 @@ import {
     WebSocketServer,
   } from '@nestjs/websockets';
   import { Socket, Server } from 'socket.io';
-import { RedisService } from 'src/services/redis.service';
+import { RedisService } from 'src/database/redis.service';
   
   @WebSocketGateway({ cors: true })
   export class RealTimeGateway implements OnGatewayConnection, OnGatewayDisconnect {

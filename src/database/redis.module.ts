@@ -1,7 +1,7 @@
 import { Module, Global, Logger } from '@nestjs/common';
 import Redis from 'ioredis';
 import { envs } from '../envs'; 
-import { RedisService } from 'src/services/redis.service';
+import { RedisService } from 'src/database/redis.service';
 
 const logger: Logger = new Logger('RedisModule'); 
 
