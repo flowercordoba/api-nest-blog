@@ -5,6 +5,7 @@ import { RealTimeGateway } from './realtime.gateway';
 
 @Module({
   providers: [RealTimeGateway, RealtimeService],
-  imports:[RedisModule]
+  imports:[RedisModule],
+  exports:[RealTimeGateway, RealtimeService]
 })
 export class RealtimeModule {}
